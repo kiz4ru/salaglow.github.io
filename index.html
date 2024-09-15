@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala Glow - Discoteca</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="img/gloww-removebg-preview.png" alt="Logo de Glow">
+        </div>
+        <nav>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+            <div class="close-icon" onclick="toggleMenu()">✖</div>
+            <ul class="nav-links hide" id="nav-links">
+                <li><a href="#reservar-vip" class="boton">Reservar VIP</a></li>
+                <li><a href="#shop-collection" class="boton">Galería</a></li>
+            </ul>
+        </nav>
+    </header>
+   
+    <div class="main">
+    <!-- Sección de Video de Fondo -->
+    <section id="hero">
+        <video autoplay muted loop id="background-video" playsinline>
+            <source src="video/7271837-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Tu navegador no soporta el video de fondo.
+        </video>
+    </section>
+
+    <!-- Sección de Imágenes Rotatorias -->
+     <!-- Sección del Logo Rotatorio -->
+    <section id="rotating-icon">
+        <div class="rotating-icon">
+            <img src="img/Sin título.png" alt="Logo de Glow">
+        </div>
+        <p>
+            <span>¡Bienvenido a Glow!</span>
+            <br>La mejor discoteca de la ciudad. ¡Ven a bailar con nosotros!
+        </p>
+    </section>
+
+
+
+    <!-- Sección de Eventos -->
+    <section id="eventos">
+        <h2>Próximos Eventos</h2>
+        <div class="eventos-grid">
+            <div class="evento">
+                <img src="img/im1.jpg" alt="Evento 1">
+                <h3>Nombre del Evento</h3>
+                <p>Descripción breve del evento.</p>
+            </div>
+            <div class="evento">
+                <img src="img/img2.jpg" alt="Evento 2">
+                <h3>Nombre del Evento</h3>
+                <p>Descripción breve del evento.</p>
+            </div>
+            <div class="evento">
+                <img src="img/img3.jpg" alt="Evento 3">
+                <h3>Nombre del Evento</h3>
+                <p>Descripción breve del evento.</p>
+            </div>
+            <!-- Agrega más eventos aquí -->
+        </div>
+    </section>
+
+   
+    <!-- Sección de Galería -->
+    <section id="galleria">
+        <div class="carousel">
+            <div class="slides">
+                <div class="slide active">
+                    <img src="img/Fotosssa(1).jpg" alt="Imagen 1">
+                </div>
+                <div class="slide">
+                    <img src="img/Fotosssa(2).jpg" alt="Imagen 2">
+                </div>
+                <div class="slide">
+                    <img src="img/Fotosssa.jpg" alt="Imagen 3">
+                </div>
+                <div class="slide">
+                    <img src="img/Fotosssa(3).jpg" alt="Imagen 4">
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="prev">&#10094;</button>
+                <button class="next">&#10095;</button>
+            </div>
+            <div class="carousel-indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <!-- Añade más puntos aquí según la cantidad de imágenes -->
+            </div>
+        </div>
+    </section>
+    
+
+</div>
+<div class="footer">
+    <div class="bubbles">
+        <!-- Generar burbujas con diferentes tamaños, posiciones y tiempos -->
+        <div class="bubble" style="--size:3.5rem; --distance:8rem; --position:10%; --time:5s; --delay:-3s;"></div>
+        <div class="bubble" style="--size:3.2rem; --distance:7.2rem; --position:30%; --time:4s; --delay:-2s;"></div>
+        <div class="bubble" style="--size:4rem; --distance:9rem; --position:50%; --time:5s; --delay:-3s;"></div>
+        <div class="bubble" style="--size:2.8rem; --distance:6.5rem; --position:70%; --time:3s; --delay:-4s;"></div>
+        <div class="bubble" style="--size:3.5rem; --distance:8rem; --position:90%; --time:4s; --delay:-2s;"></div>
+        <!-- Añade más burbujas aquí -->
+    </div>
+
+    <div class="content">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-spotify"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        <div class="links">
+            <a href="#">Cookies</a>
+            <a href="#">Privacidad</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Trabaja con nosotros</a>
+            <a href="#">Contacta con nosotros</a>
+        </div>
+        <div>
+            <p>©2024 Glow Discoteca. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</div>
+    <script src="scripts.js"></script>
+    <script src="manejo.js"></script>
+    <script src="carrosel.js"></script>
+    <script src="reserva.js"></script>
+</body>
+</html>
