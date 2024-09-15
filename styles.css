@@ -181,28 +181,64 @@ body.no-scroll {
 /* Sección de Eventos */
 #eventos {
     padding: 2rem;
-    background-color: #222;
-}
-
-#eventos h2 {
-    text-align: left;
-    margin-bottom: 2rem;
-    font-size: 4rem;
+    background-color: #1e1e1e;
 }
 
 .eventos-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.evento {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .evento img {
     width: 100%;
-    border-radius: 10px;
+    border-bottom: 4px solid #ff3c3c; /* Ajusta el color del borde */
 }
 
-.evento h3 {
-    margin: 1rem 0 0.5rem 0;
+.evento-info {
+    padding: 1rem;
+    text-align: center;
+}
+
+.evento-info h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.evento-info p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.btn-reservar {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #ff3c3c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reservar:hover {
+    background-color: #d32f2f;
+}
+
+.evento:hover {
+    transform: translateY(-5px);
 }
 
 #galleria {
