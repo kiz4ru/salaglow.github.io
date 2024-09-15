@@ -5,9 +5,9 @@ body, html {
     font-family: "TTHovesMedium", Arial, sans-serif;
     color: #fff;
     background-color: #000;
+    overflow-x: hidden; /* Asegura que no haya scroll horizontal */
 }
 
-/* Estilos para el Encabezado */
 header {
     position: fixed;
     top: 0;
@@ -24,72 +24,131 @@ header .logo img {
     height: 100px;
 }
 
+/* Estilos para el menú */
 nav {
     position: relative;
 }
 
-/* Estilos para los iconos del menú */
+/* Iconos del menú (hamburguesa y cierre) */
 nav .menu-icon, nav .close-icon {
     font-size: 2rem;
     cursor: pointer;
-    display: none; /* Ocultos por defecto */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1001;
+    display: none; /* Se ocultan por defecto */
 }
 
-/* Mostrar el icono de menú hamburguesa solo en dispositivos móviles */
-@media (max-width: 768px) {
-    nav .menu-icon {
-        display: block;
-    }
-
-    nav .close-icon.active {
-        display: block;
-    }
+nav .menu-icon.active {
+    display: block; /* Muestra la hamburguesa cuando está activa */
 }
 
-/* Estilo para cuando el menú está activo */
-nav.active .menu-icon {
-    display: none; /* Oculta el icono de hamburguesa cuando el menú está activo */
+nav .close-icon.active {
+    display: block; /* Muestra la X cuando está activa */
 }
 
-nav.active .close-icon {
-    display: block; /* Muestra el icono de cierre (X) cuando el menú está activo */
-}
-
-/* Estilos para el menú y el efecto cortina */
 nav .nav-links {
-    display: none; /* Oculto por defecto */
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+
+nav .nav-links.active {
     flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.9);
     position: fixed;
     top: 0;
-    right: -100%; /* Posición inicial fuera de la pantalla */
-    padding: 100px 0 20px 0;
-    transition: right 0.5s ease; /* Efecto de cortina */
+    left: 0;
+    padding-top: 100px;
     z-index: 1000;
-    list-style: none
-}
-
-nav.active .nav-links {
-    right: 0; /* Muestra el menú con el efecto de cortina */
-}
-
-nav .nav-links li {
-    margin: 20px 0;
+    transform: translateY(0);
 }
 
 nav .nav-links li a {
-    font-size: 2rem;
-    color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #0944e5;
+    transition: background-color 0.3s ease;
 }
 
 nav .nav-links li a:hover {
-    color: #ff2b2b;
+    background-color: #2b6bff;
 }
+
+
+/* Media Queries para pantallas pequeñas */
+@media (max-width: 768px) {
+    /* Ocultar menú de escritorio y mostrar iconos de menú móvil */
+    nav .menu-icon {
+        display: block;
+    }
+    nav .close-icon {
+        display: none;
+    }
+
+    nav .nav-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100vh; /* Asegúrate de que cubra toda la altura de la pantalla */
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding-top: 100px;
+        z-index: 1000;
+        transition: transform 0.5s ease;
+        transform: translateY(-100%);
+    }
+    
+    nav .menu-icon.active {
+        display: none; /* Oculta la hamburguesa cuando está activo */
+    }
+    
+    nav .close-icon.active {
+        display: block; /* Muestra la X cuando está activo */
+    }
+    
+
+   /* Estilos para los botones del menú en móviles */
+    nav .nav-links li a {
+        font-size: 1.2rem; /* Ajusta el tamaño del texto */
+        color: white;
+        text-decoration: none;
+        padding: 10px 20px; /* Ajusta el relleno para controlar el tamaño del botón */
+        border-radius: 25px;
+        background-color: #1e90ff; /* Cambia el color de fondo */
+        display: block;
+        margin: 10px auto; /* Centra los botones horizontalmente */
+        width: 80%; /* Limita el ancho de los botones */
+        text-align: center;
+    }
+
+    nav .nav-links li a:hover {
+        background-color: #4682b4; /* Cambia el color de fondo al pasar el ratón */
+    }
+
+
+    nav.menu-open .menu-icon {
+        display: none;
+    }
+
+    nav.menu-open .close-icon {
+        display: block;
+    }
+}
+
+
+
 
 /* Estilo de botones en pantallas grandes */
 @media (min-width: 769px) {
